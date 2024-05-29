@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  
+  <!-- Make it compatible to mobile devices -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Job Threat Index</title>
+  
+</head>
+
+
+<body style="background: #000;">
+ <div class="login" style="font-size: 200%  ;">
+	<h1 style="color:Violet;text-align: center;">Job Threat Index</h1>
+
+     <!-- Action is where the data is sent. In our case, predict page.
+     If action is omitted, it assumed to be the current page -->
+    <form action="{{ url_for('predict')}}" method="post" style="text-align: center;">
+    	<input type="text" name="Tasks" placeholder="Tasks" required="required" /><br>
+        <input type="text" name="AIModels" placeholder="AIModels" required="required"  />
+        <br>
+        <input type="text" name="AI_Workload_Ratio" placeholder="AI_Workload_Ratio" required="required" />
+        <br>
+        <input type="text" name="Job_Title_Code" placeholder="Job_Title_Code" required="required" />
+        <br>
+        <input type="text" name="domain_code" placeholder="domain_code" required="required">
+        <p>
+
+        <button style="background-color:rgb(127, 180, 255)"  type="submit" class="btn btn-primary btn-block btn-large">Probability of Automation</button></p>
+    </form>
+
+   <br>
+   <br>
+   <h4 style="color:Violet;text-align: center;">
+   {{ prediction_text }} </h4>
+
+ </div>
+
+
+</body>
+</html>
